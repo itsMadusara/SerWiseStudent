@@ -1,0 +1,158 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app
+        xmlns="https://jakarta.ee/xml/ns/jakartaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+        version="5.0"
+>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+    <servlet-name>ServletDatabase</servlet-name>
+    <servlet-class>com.CS01.SerWise.ServletDatabase</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletDatabase</servlet-name>
+    <url-pattern>/InsertData</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ServletLogin</servlet-name>
+    <servlet-class>com.CS01.SerWise.ServletLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletLogin</servlet-name>
+    <url-pattern>/ServletLogin</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ServletLogout</servlet-name>
+    <servlet-class>com.CS01.SerWise.ServletLogout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletLogout</servlet-name>
+    <url-pattern>/ServletLogout</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ServletRegister</servlet-name>
+    <servlet-class>com.CS01.SerWise.ServletRegister</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletRegister</servlet-name>
+    <url-pattern>/ServletRegister</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ServletAddVehicle</servlet-name>
+    <servlet-class>com.CS01.SerWise.ServletAddVehicle</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletAddVehicle</servlet-name>
+    <url-pattern>/ServletAddVehicle</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ServletAddCheckupAppointment</servlet-name>
+    <servlet-class>com.CS01.SerWise.ServletAddCheckupAppointment</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletAddCheckupAppointment</servlet-name>
+    <url-pattern>/ServletAddCheckupAppointment</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ServletAddLubeAppointment</servlet-name>
+    <servlet-class>com.CS01.SerWise.ServletAddLubeAppointment</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletAddLubeAppointment</servlet-name>
+    <url-pattern>/ServletAddLubeAppointment</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>addBranch</servlet-name>
+    <servlet-class>com.CS01.SerWise.addBranch</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addBranch</servlet-name>
+    <url-pattern>/addbranch</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>addEmployee</servlet-name>
+    <servlet-class>com.CS01.SerWise.addEmployee</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addEmployee</servlet-name>
+    <url-pattern>/addemployee</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>addInventory</servlet-name>
+    <servlet-class>com.CS01.SerWise.addInventory</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addInventory</servlet-name>
+    <url-pattern>/addinventory</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>getBranchList</servlet-name>
+    <servlet-class>com.CS01.SerWise.getBranchList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getBranchList</servlet-name>
+    <url-pattern>/branchlist</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>getEmployeeList</servlet-name>
+    <servlet-class>com.CS01.SerWise.getEmployeeList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getEmployeeList</servlet-name>
+    <url-pattern>/employeelist</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>getInventoryList</servlet-name>
+    <servlet-class>com.CS01.SerWise.getInventoryList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getInventoryList</servlet-name>
+    <url-pattern>/inventorylist</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>updateBranch</servlet-name>
+    <servlet-class>com.CS01.SerWise.updateBranch</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateBranch</servlet-name>
+    <url-pattern>/updateBranch</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>deleteBranch</servlet-name>
+    <servlet-class>com.CS01.SerWise.deleteBranch</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteBranch</servlet-name>
+    <url-pattern>/deleteBranch</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>updateBranchDetails</servlet-name>
+    <servlet-class>com.CS01.SerWise.updateBranchDetails</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateBranchDetails</servlet-name>
+    <url-pattern>/updateBranchDetails</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ViewAppointments</servlet-name>
+    <servlet-class>com.CS01.SerWise.ServletViewAppointments</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewAppointments</servlet-name>
+    <url-pattern>/ViewAppoinments</url-pattern>
+  </servlet-mapping>
+
+
+</web-app>
