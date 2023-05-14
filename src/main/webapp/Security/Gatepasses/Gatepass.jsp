@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../../CSS/backgrount.css">
     <link rel="stylesheet" href="../CSS/table.css">
     <link rel="stylesheet" href="../CSS/popup.css">
+    <link rel="stylesheet" href="../CSS/content.css">
     <title>Document</title>
 </head>
 <body>
@@ -45,10 +46,10 @@
         }
     }
     catch(SQLException sq){
-        response.sendRedirect("Errsql.html");
+        sq.printStackTrace();
     }
     catch(ClassNotFoundException cq){
-        response.sendRedirect("Err.html");
+        cq.printStackTrace();
     }
 //  out.println("<table>");
 //  out.println("</table>");
@@ -61,7 +62,7 @@
                 <td><a href="../Home.jsp" >Home</a></td>
                 <td><a href="../Appointments/Appointments.jsp" >Appointments</a></td>
                 <td><a href="../Gatepasses/Gatepass.jsp" style="color:#EE534F">Gatepass</a></td>
-                <td><a href="/SerWise_war/ServletLogout"><button class="button">Logout</button></a></td>
+                <td><a href="../../Login/login.html"><button class="button">Logout</button></a></td>
             </tr>
         </table>
     </header>
@@ -69,19 +70,19 @@
     <div>
 
         <div class="single-content-div center title">
-            <span class="title">SerWice &MediumSpace;</span> <span class="subtitle"> - &MediumSpace; View Appointment</span>
+            <span class="title">SerWice &MediumSpace;</span> <span class="subtitle"> - &MediumSpace; View GatePass</span>
         </div>
 
         <div class="single-content-div center title">
-            Search By Appointment ID : &MediumSpace;
+            Search By Vehicle Number : &MediumSpace;
             <form>
-                <input type="text" placeholder="Employee ID">
+                <input type="text" placeholder="Vehicle Number">
                 &MediumSpace;
                 <input type="submit" value="Search" class="button">
             </form>
         </div>
 
-        <div class="single-content-div center form-display-table">
+        <div class="center form-display-table">
             <table id="tablej">
                 <tr>
                     <th>Gatepass ID</th>

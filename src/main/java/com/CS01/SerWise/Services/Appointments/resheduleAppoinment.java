@@ -1,9 +1,6 @@
-package com.CS01.SerWise.Services.Appointments;
+package com.CS01.SerWise.Services.Appoinment;
 
 import com.CS01.SerWise.Controllers.appoinmentTable;
-import com.CS01.SerWise.Controllers.registeredClientTable;
-import com.CS01.SerWise.Services.Job.sendDoneMessage;
-import com.CS01.SerWise.Services.Process.sendMessage;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -14,7 +11,6 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 
 @WebServlet(name = "ServletresheduleAppoinment", value = "/ServletresheduleAppoinment")
 public class resheduleAppoinment extends HttpServlet {
@@ -37,6 +33,7 @@ public class resheduleAppoinment extends HttpServlet {
         String new_time=request.getParameter("new_time");
         PrintWriter out=response.getWriter();
 
+
         if(new_date=="" && new_time!=""){
             date=old_date;
             time=new_time;
@@ -51,15 +48,6 @@ public class resheduleAppoinment extends HttpServlet {
         try {
             //reshedule appoinment with user entered date and time
             appoinmentTable.update(afterSet,afterWhere);
-
-            //get client id from appoinment table respective appoinment id
-            String clientId=appoinmentTable.select("Registered_Client_Id","Appoinment_Id="+id).get(0)[0];
-
-            String phoneNumber = registeredClientTable.select("Contact","Registered_Client_Id="+clientId).get(0)[0];
-            phoneNumber = phoneNumber.substring(1);
-            phoneNumber = "94"+phoneNumber;
-            String doneMessageUrl = sendMessage.sendMessage("Your vehicle is done. You can collect it now. Thank you - SerWise !!",phoneNumber);
-            sendDoneMessage.sendMessage(doneMessageUrl);
 
             //redirect to the branch manager view appoinment page
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/ServletlistAppoinment");

@@ -50,23 +50,23 @@
   %>
 </div>
 
-<div class="single-content-div center">
+<div class="single-content-div center glass">
   <div class="single-content-div-form">
     <%
       try{
         ArrayList<String[]> results1 = vehicleTable.select("*","Vehicle_Id="+vId);
         for (String[] i : results1){
     %>
-    <div class="form-display-table">
-      <table>
-        <tr><td><%=i[2]%></td></tr>
-        <tr><td><%=i[4]%></td></tr>
-        <tr><td><%=i[5]%></td></tr>
-        <tr><td><%=i[1]%></td></tr>
-        <tr><td><%=i[6]%></td></tr>
-        <tr><td><%=i[7]%></td></tr>
-      </table><br>
-      <form method="post" action="../../RemoveVehicle">
+    <div>
+      <form>
+        <input type="text" value="<%=i[2]%>" disabled>
+        <input type="text" value="<%=i[4]%>" disabled>
+        <input type="text" value="<%=i[5]%>" disabled>
+        <input type="text" value="<%=i[1]%>" disabled>
+        <input type="text" value="<%=i[6]%>" disabled>
+        <input type="text" value="<%=i[7]%>" disabled>
+      </form>
+      <form class="center" method="post" action="../../RemoveVehicle">
         <input type="submit" value="Remove Vehicle" class="button"/>
         <input type = "hidden" name="Vehicle_Id" value="<%=vId %>" class="button" />
       </form>
@@ -89,6 +89,5 @@
   <div class="center">All Rights Recieved</div>
 </footer>
 <script src="/SerWise_war/RegisteredClient/RegisteredClientHeader.js"></script>
-<script src="/SerWise_war/footer.js"></script>
 </body>
 </html>

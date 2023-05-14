@@ -45,7 +45,7 @@
       <label>Batch No</label>
       <input type="number" name="batchNo" placeholder="<%=i[1]%>" disabled><br>
       <label>Enter Quantity</label>
-      <input type="number" name="quantity" placeholder="<%=i[2]%>" min="0" required><br>
+      <input type="number" name="quantity" placeholder="<%=i[2]%>" required><br>
       <input type="submit" value="Add Stock" class="button">
     </form>
     <%
@@ -66,6 +66,5 @@
   <div class="center">All Rights Recieved</div>
 </footer>
 <script src="/SerWise_war/StoreKeeper/StoreKeeperHeader.js"></script>
-<script src="/SerWise_war/footer.js"></script>
 </body>
 </html>

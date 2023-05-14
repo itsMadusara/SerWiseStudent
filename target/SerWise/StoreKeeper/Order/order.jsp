@@ -61,7 +61,6 @@
                     <th>Item No</th>
                     <th>Batch No</th>
                     <th>Quantity</th>
-                    <th>Issue Items</th>
                 </tr>
                 <%
                     int branchId=Integer.parseInt(session.getAttribute("branchId").toString());
@@ -99,6 +98,5 @@
     <div class="center">All Rights Recieved</div>
 </footer>
 <script src="/SerWise_war/StoreKeeper/StoreKeeperHeader.js"></script>
-<script src="/SerWise_war/footer.js"></script>
 </body>
 </html>

@@ -61,6 +61,13 @@
     gap: 30px;
 }
 
+.row-content-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .colomn-content-div.options{
     align-items: flex-start;
 }

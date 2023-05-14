@@ -103,7 +103,6 @@
   <div class="center">All Rights Recieved</div>
 </footer>
 <script src="/SerWise_war/RegisteredClient/RegisteredClientHeader.js"></script>
-<script src="/SerWise_war/footer.js"></script>
 <script>
   const today = new Date();
   const minDate = new Date(today.getFullYear(),today.getMonth(),today.getDate()+1);

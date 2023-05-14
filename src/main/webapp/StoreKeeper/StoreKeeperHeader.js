@@ -8,7 +8,7 @@ const innerText = "<img src=\"/SerWise_war/Assets/SerWise.png\" class=\"navimg\"
     "        <td><a href=\"/SerWise_war/StoreKeeper/Inventory/inventory.jsp\">Inventory</a></td>\n" +
     "        <td><a href=\"/SerWise_war/StoreKeeper/Reorder/reorder.jsp\">Reorder Items</a></td>\n" +
     "        <td><a href='/SerWise_war/ServletLogout'><button class=\"button\">Logout</button></a></td>\n" +
-    "        <td><a href=\"/SerWise_war/Profile\"><img src=\"/SerWise_war/Assets/ProfilePic.jpg\" class=\"profile\"></a></td>\n" +
+    "        <td><a href=\"#\"><img src=\"/SerWise_war/Assets/ProfilePic.jpg\" class=\"profile\"></a></td>\n" +
     "    </tr>\n" +
     "</table>";
 

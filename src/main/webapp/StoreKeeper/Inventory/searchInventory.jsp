@@ -104,6 +104,5 @@
   <div class="center">All Rights Recieved</div>
 </footer>
 <script src="/SerWise_war/StoreKeeper/StoreKeeperHeader.js"></script>
-<script src="/SerWise_war/footer.js"></script>
 </body>
 </html>

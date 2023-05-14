@@ -14,7 +14,7 @@ public class uploadProfilePicture extends HttpServlet {
         String fileName = profilePic.getSubmittedFileName();
 
         // Specify the directory where the file should be saved
-        String saveDirectory = "D:\\SerWise\\src\\main\\webapp\\Profile\\ProfilePictures\\";
+        String saveDirectory = "C:\\SerWise\\src\\main\\webapp\\Profile\\ProfilePictures\\";
         ServletContext context = getServletContext();
         String contextPath = context.getRealPath("/");
         String filePath = contextPath + "/Profile/ProfilePictures/";
@@ -41,8 +41,6 @@ public class uploadProfilePicture extends HttpServlet {
         profilePic.write(saveDirectory+imageSaveName+".jpg");
         profilePic.write(filePath+imageSaveName+".jpg");
 
-        System.out.println(fileName);
-        System.out.println("Test");
 
         resp.sendRedirect("/SerWise_war/Profile");
     }

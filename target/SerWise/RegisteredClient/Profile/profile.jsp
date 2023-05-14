@@ -93,7 +93,6 @@
     </footer>
 
 <script src="/SerWise_war/Profile/profile.js"></script>
-<script src="/SerWise_war/footer.js"></script>
 <%
     if(session.getAttribute("employeeId")==null){
         out.print("<script src=\"/SerWise_war/RegisteredClient/RegisteredClientHeader.js\"></script>");

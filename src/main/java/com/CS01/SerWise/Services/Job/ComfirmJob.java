@@ -57,7 +57,7 @@ public class ComfirmJob extends HttpServlet {
                 int new_quantity=0;
 
                 //get the exsting quantity from inventoty_item_has_branch table
-                String where2="inventory_item_Inventory_Item_Id="+inventoryItemId+" And batchNo="+batchNo;
+                String where2="Inventory_Item_Id="+inventoryItemId+" And batchNo="+batchNo;
                 ArrayList<String[]> result2= inventoryItemBranchTable.select("quantity",where2);
                 for(String[] j: result2) {
 
@@ -67,7 +67,7 @@ public class ComfirmJob extends HttpServlet {
 
                 //update quantity with batch no
                 String afterSet2 = "quantity='%s'";
-                String afterWhere2 = "inventory_item_Inventory_Item_Id='%s' and batchNo='%s'";
+                String afterWhere2 = "Inventory_Item_Id='%s' and batchNo='%s'";
                 afterSet2 = String.format(afterSet2,new_quantity);
                 afterWhere2 = String.format(afterWhere2,inventoryItemId,batchNo);
                 inventoryItemBranchTable.update(afterSet2,afterWhere2);
@@ -90,11 +90,13 @@ public class ComfirmJob extends HttpServlet {
             String vals4="'"+date+"','"+description+"',"+vehicleId+","+clientId;
             serviceRecordTable.insert(attr4,vals4);
 
+            //send Done message
             String phoneNumber = registeredClientTable.select("Contact","Registered_Client_Id="+clientId).get(0)[0];
             phoneNumber = phoneNumber.substring(1);
             phoneNumber = "94"+phoneNumber;
             String doneMessageUrl = sendMessage.sendMessage("Your vehicle is done. You can collect it now. Thank you - SerWise !!",phoneNumber);
-            sendDoneMessage.sendMessage(doneMessageUrl);
+            RequestDispatcher requestDispatcherMessage = request.getRequestDispatcher(doneMessageUrl);
+            requestDispatcherMessage.include(request,response);
 
             //redirect to the home page
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/SlotLeader/Home/home.jsp");
@@ -104,6 +106,7 @@ public class ComfirmJob extends HttpServlet {
             //if there is an error , redirect to the error page
             request.setAttribute("exception",e);
             RequestDispatcher dispatcher = request.getRequestDispatcher("Error/error.jsp");
+
             dispatcher.forward(request, response);
         }
     }

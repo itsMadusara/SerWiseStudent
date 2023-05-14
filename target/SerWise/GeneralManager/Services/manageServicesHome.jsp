@@ -79,14 +79,10 @@
     </div>
 
 
-    <footer class="footer">
-        <div class="center"><img src="/SerWise_war/Assets/SerWise.png" class="logo"></div>
-        <div class="center"><a href="#"> Contact Us </a> &nbsp| 
-            &nbsp<a href="#"> About Us </a> &nbsp|
-            &nbsp <a href="#"> Legal Stuff </a></div>
-        <div class="center">All Rights Recieved</div>
-    </footer>
+    <footer class="footer"></footer>
+
     <script src="/SerWise_war/GeneralManager/GeneralManagerHeader.js"></script>
     <script src="/SerWise_war/GeneralManager/Services/serviceList.js"></script>
+    <script src="/SerWise_war/footer.js"></script>
 </body>
 </html>

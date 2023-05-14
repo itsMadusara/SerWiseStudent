@@ -39,7 +39,7 @@ public class ServletAddCheckupAppointment extends HttpServlet {
             }else {
                 String values = "'%s','%s','%s',%s,%s,%s";
                 values = String.format(values,date,time,dr,userid,BId,vId);
-                appoinmentTable.insert("Date,Time,Desription,Registered_Client_Id,Branch_Id,Vehicle_Id",values);
+                appoinmentTable.insert("Date,Time,Description,Registered_Client_Id,Branch_Id,Vehicle_Id",values);
                 response.sendRedirect("RegisteredClient/Appointments/appointments.jsp");
             }
 

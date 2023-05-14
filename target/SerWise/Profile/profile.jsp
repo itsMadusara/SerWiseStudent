@@ -48,11 +48,14 @@
 
         <div class="two-content-div-form">
             <form method="post" action="/SerWise_war/editProfile">
-                <input type="text" name="fname" placeholder="First Name" value="<%=request.getAttribute("firstName")%>" required> <br>
-                <input type="text" name="lname" placeholder="Last Name" value="<%=request.getAttribute("lastName")%>" required><br>
-                <input type="tel" name="contact" pattern="[0-9]{10}" placeholder="Contact" value="<%=request.getAttribute("contact")%>" required><br>
+                <input type="text" name="fname" placeholder="First Name" pattern="[A-Za-z]+" value="<%=request.getAttribute("firstName")%>" required> <br>
+                <input type="text" name="lname" placeholder="Last Name" pattern="[A-Za-z]+" value="<%=request.getAttribute("lastName")%>" required><br>
+                <input type="tel" name="contact" pattern="(07)[0-9]{8}" placeholder="Contact" value="<%=request.getAttribute("contact")%>" required><br>
                 <input type="email" name="email" placeholder="Email" value="<%=request.getAttribute("email")%>" required><br>
 <%--                <input type="password" name="pswd" pattern="{8,}" id="password" placeholder="Password" required><br>--%>
+                <%if(!(request.getParameter("opterror") == null)){
+                    out.println("<span>"+request.getParameter("opterror")+"</span><br>");
+                }%>
                 <input type="submit" value="Edit Details" class="button"> &MediumSpace;
                 <button type="button" class="button" id="passwordChange">Change Password</button>
             </form>
@@ -102,17 +105,11 @@
             case 4:
                 out.print("<script src=\"/SerWise_war/BranchManager/BranchManagerHeader.js\"></script>");
                 break;
-            case 5:
-                out.print("<script src=\"/SerWise_war/StoreKeeper/StoreKeeperHeader.js\"></script>");
-                break;
             case 6:
                 out.print("<script src=\"/SerWise_war/Cashier/CashierHeader.js\"></script>");
                 break;
-            case 7:
-                out.print("<script src=\"/SerWise_war/Security/SecurityHeader.js\"></script>");
-                break;
-            case 8:
-                out.print("<script src=\"/SerWise_war/SlotLeader/SlotLeaderHeader.js\"></script>");
+            default:
+                response.sendRedirect("http://localhost:8081/SerWise_war/Error/error.jsp");
                 break;
         }
     }

@@ -76,6 +76,5 @@
 </footer>
 <script src="/SerWise_war/RegisteredClient/RegisteredClientHeader.js"></script>
 <script src="addVehicle.js"></script>
-<script src="/SerWise_war/footer.js"></script>
 </body>
 </html>

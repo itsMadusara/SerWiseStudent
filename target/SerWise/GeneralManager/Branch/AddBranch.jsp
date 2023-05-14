@@ -25,7 +25,7 @@
     <header class="navigation"></header>
 
 
-    <div class="two-content-div">
+    <div class="two-content-div glass">
         <div>
             <span class="title">SerWise</span><br>
             <span class="subtitle">Manage Branches</span>
@@ -33,9 +33,9 @@
         <div class="two-content-div-form">
             <form method="post" action="/SerWise_war/addbranch">
 <%--                <input type="text" name="branchID" pattern="[0-9]+" placeholder="Branch ID" required><br>--%>
-                <input type="text" name="location" placeholder="Branch Location (City)" required><br>
+                <input type="text" name="location" pattern="([A-Z])[A-Za-z0-9' ']+" placeholder="Branch Location (City)" required><br>
                 <input type="text" name="address" placeholder="Address" required><br>
-                <input type="text" name="noOfSlots" pattern="[0-9]+" placeholder="No of Slots" required><br>
+                <input type="number" name="noOfSlots" pattern="[0-9]+" min="2" placeholder="No of Slots" required><br>
 <%--                <input type="text" name="branchManagerID" id="branchManagerId" pattern="[0-9]+" placeholder="Branch Manager ID"><br>--%>
                 <button type="submit" id="addBranchBtn" class="button">Add Branch</button><br>
             </form>
@@ -43,15 +43,10 @@
     </div>
 
 
-    <footer class="footer">
-        <div class="center"><img src="../../Assets/SerWise.png" class="logo"></div>
-        <div class="center"><a href="#"> Contact Us </a> &nbsp|
-            &nbsp<a href="#"> About Us </a> &nbsp|
-            &nbsp <a href="#"> Legal Stuff </a></div>
-        <div class="center">All Rights Recieved</div>
-    </footer>
+    <footer class="footer"></footer>
 
     <script src="/SerWise_war/GeneralManager/GeneralManagerHeader.js"></script>
     <script src="/SerWise_war/GeneralManager/Branch/addBranchManager.js"></script>
+    <script src="/SerWise_war/footer.js"></script>
 </body>
 </html>

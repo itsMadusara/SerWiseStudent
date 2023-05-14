@@ -25,15 +25,12 @@ public class ServletOTP extends HttpServlet {
         String id=(String) session.getAttribute("Email");
         String contact=(String) session.getAttribute("Contact");
         String hp=(String) session.getAttribute("pswd");
-        Integer opt= (Integer)session.getAttribute("OTP");
-        int optval= Integer.parseInt(request.getParameter("OTP"));
-
-        if(opt == null){
-            opt=0;
-        }
+        Integer opt= (Integer) session.getAttribute("OTP");
+        Integer optval= Integer.valueOf(request.getParameter("OTPval"));
 
         try {
-                if (optval!=opt) {
+            if (optval != opt) {
+                if (CheckUser.checkUserExists(id)) {
                     response.sendRedirect("UnregisteredClient/Register/OTP.jsp?message=Invalid OTP!");
                     return;
                 } else{
@@ -43,8 +40,9 @@ public class ServletOTP extends HttpServlet {
                     String values2 = "'%s','%s','%s','%s'";
                     values2 = String.format(values2,fname,lname,contact,id);
                     registeredClientTable.insert("First_Name,Last_Name,Contact,Address",values2);
-                    response.sendRedirect("Login/login.jsp");
+                    response.sendRedirect("Login/login.html");
                 }
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {

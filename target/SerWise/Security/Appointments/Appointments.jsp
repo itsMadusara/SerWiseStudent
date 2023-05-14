@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../../CSS/backgrount.css">
   <link rel="stylesheet" href="../CSS/table.css">
   <link rel="stylesheet" href="../CSS/popup.css">
+  <link rel="stylesheet" href="../CSS/content.css">
   <title>Document</title>
 </head>
 <body>
@@ -59,9 +60,9 @@
     <table>
       <tr>
         <td><a href="../Home.jsp" >Home</a></td>
-        <td><a href="inventory.jsp" style="color:#EE534F">Appointments</a></td>
+        <td><a href="Appointments.jsp" style="color:#EE534F">Appointments</a></td>
         <td><a href="../Gatepasses/Gatepass.jsp" >Gatepass</a></td>
-        <td><a href="/SerWise_war/ServletLogout"><button class="button">Logout</button></a></td>
+        <td><a href="../../Login/login.html"><button class="button">Logout</button></a></td>
       </tr>
     </table>
   </header>
@@ -75,13 +76,13 @@
     <div class="single-content-div center title">
       Search By Appointment ID : &MediumSpace;
       <form>
-        <input type="text" placeholder="Employee ID">
+        <input type="text" placeholder="Appoinment ID">
         &MediumSpace;
         <input type="submit" value="Search" class="button">
       </form>
     </div>
 
-    <div class="single-content-div center form-display-table">
+    <div class="center form-display-table">
       <table id="tablej">
         <tr>
           <th>Appointment ID</th>
@@ -92,7 +93,7 @@
         </tr>
         <%
           for(Integer i = 0; i<data.size();i++){
-            out.println("<tr><td>"+data.get(i).app_id+"</td><td>"+data.get(i).date+"</td><td>"+data.get(i).time+"</td><td>"+data.get(i).V_No+"</td><td style=\"border-style: none;\"><button class=\"button\" onclick=\"deleteconfirm('"+data.get(i).app_id+"')\">Delete</button></td></tr>");
+            out.println("<tr><td>"+data.get(i).app_id+"</td><td>"+data.get(i).date+"</td><td>"+data.get(i).time+"</td><td>"+data.get(i).V_No+"</td><td style=\"border-style: none;\"><a href=\"Checkin.jsp?v_no="+data.get(i).V_No+"date="+data.get(i).date+"&id="+data.get(i).app_id+"&time="+data.get(i).time+"\"><button class=\"button\">Check In</button></a> <button class=\"button\" onclick=\"deleteconfirm('"+data.get(i).app_id+"')\">Delete</button></td></tr>");
           }
         %>
       </table>

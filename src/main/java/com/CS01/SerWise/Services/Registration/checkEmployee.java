@@ -1,6 +1,7 @@
 package com.CS01.SerWise.Services.Registration;
 
 import com.CS01.SerWise.Controllers.employeeTable;
+import com.CS01.SerWise.Controllers.userTable;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -14,10 +15,10 @@ public class checkEmployee extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String employeeID = req.getParameter("empId");
-        String afterWhere = "Employee_Id='%s'";
+        String afterWhere = "id='%s'";
         afterWhere = String.format(afterWhere, employeeID);
         try {
-            ArrayList<String[]> employeeResult = employeeTable.select("Employee_Id",afterWhere);
+            ArrayList<String[]> employeeResult = userTable.select("id",afterWhere);
             for(String[] i : employeeResult){
                 resp.getOutputStream().print(i[0]);
             }

@@ -39,7 +39,7 @@ public class searchInventory extends HttpServlet {
             //out.println(where);
             //ArrayList<String[]> results = inventoryItemTable.select("*","Branch_Id="+branch_Id);
             //ArrayList<String[]> result1= inventoryItemBranchTable.select("*","lower(Name) Like '%"+itemName.toLowerCase()+"%'");
-            ArrayList<String[]> result1= inventoryItemBranchTable.select("*","branch_Branch_ID="+branch_Id);
+            ArrayList<String[]> result1= inventoryItemBranchTable.select("*","Branch_ID="+branch_Id);
             int noofrows = 0;
             for (String[] i : result1){
                 ArrayList<String[]> result2= inventoryItemTable.select("Name","Inventory_Item_Id="+i[0]);

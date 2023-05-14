@@ -20,13 +20,13 @@
             <span class="subtitle">Reports</span>
         </div>
         <div class="colomn-content-div options">
-<%--            <div>--%>
-<%--                <span class="title">Overall Reports</span><br>--%>
-<%--                <span>Select this to get overall reports of your SerWise business.--%>
-<%--                    This will give an overview of the garage chain.--%>
-<%--                </span><br>--%>
-<%--                <a href="#"><button class="button">Click Here</button></a>--%>
-<%--            </div>--%>
+            <div>
+                <span class="title">Overall Reports</span><br>
+                <span>Select this to get overall reports of your SerWise business.
+                    This will give an overview of the garage chain.
+                </span><br>
+                <a href="overallReportHome.jsp"><button class="button">Click Here</button></a>
+            </div>
             <div>
                 <span class="title">Branch Reports</span><br>
                 <span>Click here to get reports of individual branch to know each one better.
@@ -38,13 +38,9 @@
     </div>
 
 
-    <footer class="footer">
-        <div class="center"><img src="../../Assets/SerWise.png" class="logo"></div>
-        <div class="center"><a href="#"> Contact Us </a> &nbsp| 
-            &nbsp<a href="#"> About Us </a> &nbsp|
-            &nbsp <a href="#"> Legal Stuff </a></div>
-        <div class="center">All Rights Recieved</div>
-    </footer>
+    <footer class="footer"> </footer>
+
     <script src="/SerWise_war/GeneralManager/GeneralManagerHeader.js"></script>
+    <script src="/SerWise_war/footer.js"></script>
 </body>
 </html>
