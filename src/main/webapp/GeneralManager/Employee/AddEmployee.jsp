@@ -62,8 +62,8 @@
                     <option value="10">Mechanic</option>
                 </select><br>
 <%--                <input id="empId" type="text" name="employeeID" pattern="[0-9]+" placeholder="Employee ID" required><br>--%>
-                <input type="email" id="emailInput" name="email" placeholder="Email" required><br>
-                <input type="password" name="password" placeholder="Password" required><br>
+                <input type="email" id="emailInput" name="email" placeholder="Email" autocomplete="off" required><br>
+                <input type="password" name="password" placeholder="Password" autocomplete="off" required><br>
                 <button id="addEmployeeBtn" type="submit" class="button">Add Employee</button><br>
             </form>
         </div>

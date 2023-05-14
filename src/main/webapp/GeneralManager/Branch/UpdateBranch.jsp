@@ -35,8 +35,8 @@
       <input type="text" name="branchID" placeholder="Branch ID" pattern="[0-9]+" value="<% out.println(request.getAttribute("branchID")); %>" readonly><br>
       <input type="text" name="location" pattern="([A-Z])[A-Za-z0-9' ']+" placeholder="Branch Location (City)" value="<% out.println(request.getAttribute("location")); %>" required><br>
       <input type="text" name="address" placeholder="Address" value="<% out.println(request.getAttribute("address")); %>" required><br>
-      <input type="number" name="noOfSlots" placeholder="No of Slots" min="2" pattern="[0-9]+" value="<% out.println(request.getAttribute("noOfSlots")); %>" required><br>
-      <input type="text" name="branchManagerID" pattern="[0-9]+" placeholder="Branch Manager ID" value="<%if (request.getAttribute("branchManagerID")==null){out.println("No Branch Manager Assign");}else{out.println(request.getAttribute("branchManagerID"));} %>"><br>
+      <input type="text" name="noOfSlots" placeholder="No of Slots" min="2" pattern="[0-9]+" value="<% out.println(request.getAttribute("noOfSlots")); %>" required><br>
+<%--      <input type="text" name="branchManagerID" pattern="[0-9]+" placeholder="Branch Manager ID" value="<%if (request.getAttribute("branchManagerID")==null){out.println("No Branch Manager Assign");}else{out.println(request.getAttribute("branchManagerID"));} %>"><br>--%>
       <button type="submit" class="button">Update Branch</button><br>
     </form>
   </div>

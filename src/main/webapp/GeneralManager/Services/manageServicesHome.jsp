@@ -26,7 +26,7 @@
 
 
     <div class="single-content-div center title">
-        <span class="title">SerWice &MediumSpace;</span> <span class="subtitle"> - &MediumSpace; Manage Inventory Items</span>
+        <span class="title">SerWise &MediumSpace;</span> <span class="subtitle"> - &MediumSpace; Manage Services</span>
     </div>
     <div class="single-content-div center title">
         Search By Name : &MediumSpace; 

@@ -41,7 +41,7 @@
       for (String[] i : results1){
   %>
   <div>
-    <span class="title">A00<%=aId %></span><br>
+    <span class="title">Appointment - A<%=aId %></span><br>
   </div>
   <%
       }
@@ -51,27 +51,34 @@
   %>
 </div>
 
-<div class="single-content-div center">
+<div class="single-content-div center glass">
   <div class="single-content-div-form">
     <%
       try{
         ArrayList<String[]> results1 = appoinmentTable.select("*","Appoinment_Id="+aId);
         for (String[] i : results1){
     %>
-    <div class="form-display-table">
-      <table>
-        <tr><td>Date : <%=i[1]%></td></tr>
-        <tr><td>Time : <%=i[2]%></td></tr>
-        <tr><td>Type : <%=i[3]%></td></tr>
-      </table><br>
-      <form method="post" action="../../RemoveAppointment">
+    <div>
+    <form>
+    <label>Date :</label>
+    <input type="text" value="<%=i[1]%>" disabled> <br>
+    <label>Time :</label>
+    <input type="text" value="<%=i[2]%>" disabled> <br>
+    <label>Type :</label>
+    <input type="text" value="<%=i[3]%>" disabled> <br>
+    </form>
+    <div class="row-content-div">
+      &MediumSpace;
+      <form method="post" action="/SerWise_war/RemoveAppointment">
         <input type="submit" value="Remove Appointment" class="button"/>
         <input type = "hidden" name="Appoinment_Id" value="<%=aId %>" class="button" />
       </form>
+      &MediumSpace;
       <form method="post" action="ResheduleAppointment.jsp">
         <input type="submit" value="Reshedule Appointment" class="button"/>
         <input type = "hidden" name="Appoinment_Id" value="<%=aId %>" class="button" />
       </form>
+      &MediumSpace;
     </div>
     <%
         }
@@ -79,17 +86,13 @@
         e.printStackTrace();
       }
     %>
+    </div>
   </div>
 </div>
 
 
-<footer class="footer">
-  <div class="center"><img src="../../Assets/SerWise.png" class="logo"></div>
-  <div class="center"><a href="#"> Contact Us </a> &nbsp|
-    &nbsp<a href="#"> About Us </a> &nbsp|
-    &nbsp <a href="#"> Legal Stuff </a></div>
-  <div class="center">All Rights Recieved</div>
-</footer>
+<footer class="footer"></footer>
+
 <script src="/SerWise_war/RegisteredClient/RegisteredClientHeader.js"></script>
 <script src="/SerWise_war/footer.js"></script>
 </body>

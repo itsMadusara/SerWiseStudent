@@ -13,19 +13,19 @@
 <header class="navigation"></header>
 
 <div class="single-content-div center title">
-    <span class="title">SerWice &MediumSpace;</span> <span class="subtitle"> - &MediumSpace; View Appointments</span>
+    <span class="title">SerWise &MediumSpace;</span> <span class="subtitle"> - &MediumSpace; View Billed Jobs</span>
 </div>
 <div class="single-content-div center title">
     Search By Appointment ID : &MediumSpace;
     <form>
-        <input type="text" placeholder="Employee ID">
+        <input type="text" id="jobIdInput" placeholder="Employee ID">
         &MediumSpace;
         <input type="submit" value="Search" class="button">
     </form>
 </div>
 
 <div class="form-display-table glass">
-    <table>
+    <table id="doneJobTable">
         <tr>
             <th>Job ID</th>
             <th>Date</th>
@@ -65,13 +65,9 @@
 </div>
 
 
-<footer class="footer">
-    <div class="center"><img src="../../Assets/SerWise.png" class="logo"></div>
-    <div class="center"><a href="#"> Contact Us </a> &nbsp|
-        &nbsp<a href="#"> About Us </a> &nbsp|
-        &nbsp <a href="#"> Legal Stuff </a></div>
-    <div class="center">All Rights Recieved</div>
-</footer>
+<footer class="footer"></footer>
 <script src="/SerWise_war/Cashier/CashierHeader.js"></script>
+<script src="/SerWise_war/Cashier/BilledJobs/billedJobs.js"></script>
+<script src="/SerWise_war/footer.js"></script>
 </body>
 </html>

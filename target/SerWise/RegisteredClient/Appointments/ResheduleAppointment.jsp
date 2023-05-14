@@ -36,25 +36,24 @@
 <header class="navigation"></header>
 
 <div class="single-content-div title center">
-    <div>
-        <span class="title">SerWise</span><br>
-        <span>Reshedule Appointments</span>
-    </div>
+        <span class="title">SerWise</span>&nbsp;
+        <span class="subtitle">- Reshedule Appointments</span>
 </div>
 
-<div class="single-content-div center">
-    <div class="single-content-div-form">
+<div class="single-content-div center glass">
         <%
             try{
                 ArrayList<String[]> results1 = appoinmentTable.select("*","Appoinment_Id="+aId);
                 for (String[] i : results1){
         %>
-        <div>
-            <form action="../../ResheduleAppointment" method="post">
-                <input name="Date" type="date" placeholder="Date" id="date" min="" max="" required value="<%=i[4]%>"><br>
-                <input name="Time" type="time" placeholder="Time" id="time" min="08:00:00" max="16:00:00" step="7200" required value="<%=i[5]%>"><br>
-                <input type="submit" value="Reshedule" class="button">
-            </form>
+        <div class="two-content-div-form">
+            <div>
+                <form action="../../ResheduleAppointment" method="post">
+                    <input name="Date" type="date" placeholder="Date" id="date" min="" max="" required value="<%=i[4]%>"><br>
+                    <input name="Time" type="time" placeholder="Time" id="time" min="08:00:00" max="16:00:00" step="7200" required value="<%=i[5]%>"><br>
+                    <input type="submit" value="Reshedule" class="button">
+                </form>
+            </div>
         </div>
         <%
                 }
@@ -62,17 +61,11 @@
                 e.printStackTrace();
             }
         %>
-    </div>
 </div>
 
 
-<footer class="footer">
-    <div class="center"><img src="../../Assets/SerWise.png" class="logo"></div>
-    <div class="center"><a href="#"> Contact Us </a> &nbsp|
-        &nbsp<a href="#"> About Us </a> &nbsp|
-        &nbsp <a href="#"> Legal Stuff </a></div>
-    <div class="center">All Rights Recieved</div>
-</footer>
+<footer class="footer"></footer>
+
 <script src="/SerWise_war/RegisteredClient/RegisteredClientHeader.js"></script>
 <script src="/SerWise_war/footer.js"></script>
 </body>

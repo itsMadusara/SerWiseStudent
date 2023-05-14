@@ -1,6 +1,7 @@
 package com.CS01.SerWise.Services.Payment;
 
 import com.CS01.SerWise.Controllers.*;
+import com.CS01.SerWise.Services.DatabaseConnection;
 import com.itextpdf.io.image.ImageData;
 import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.color.Color;
@@ -26,7 +27,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.MalformedURLException;
+import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -293,6 +296,22 @@ public class getInvoice extends HttpServlet {
 
         try {
             jobTable.update("Total="+totalPrice+",Status='Billed'",afterWhere);
+
+            LocalDate date = LocalDate.now();
+            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("YYYY/MM/dd");
+
+            LocalTime time = LocalTime.now();
+            DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm:ss");
+
+            Connection con = DatabaseConnection.initializeDatabase();
+            String gatepassVals = "'%s','%s','%s'";
+            gatepassVals = String.format(gatepassVals, vehicleDetails.get(0)[4], date.format(dateFormatter), time.format(timeFormatter));
+            String query = "insert into serwise.gatepass (V_No,date,time) values (%s);";
+            query = String.format(query, gatepassVals);
+            Statement statement = con.createStatement();
+            statement.executeUpdate(query);
+            con.close();
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
