@@ -23,19 +23,22 @@ public class branchReport extends HttpServlet {
             ArrayList<String[]> billedAppointments = jobTable.select("count(Job_ID)","Status='Billed' and Branch_Id='"+branchId+"' and Date like '"+month+"%'");
             for (String[] i: billedAppointments){
                 req.setAttribute("doneAppointments",i[0]);
+                System.out.println(i[0]);
             }
 
             ArrayList<String[]> ongoingAppointments = jobTable.select("count(Job_ID)","Status in ('Done','Ongoing') and Branch_Id='"+branchId+"' and Date like '"+month+"%'");
             for (String[] i : ongoingAppointments){
                 req.setAttribute("ongoingAppointments",i[0]);
+                System.out.println(i[0]);
             }
 
-            ArrayList<String[]> totalIncome = jobTable.select("sum(Total)","Status in ('Billed') and Branch_Id='"+branchId+"' and Date like '"+month+"%'");
+            ArrayList<String[]> totalIncome = jobTable.select("sum(Total)","Status in ('Done','Ongoing') and Branch_Id='"+branchId+"' and Date like '"+month+"%'");
             for (String[] i : totalIncome){
                 if(i[0] == null){
                     i[0] = "0";
                 }
                 req.setAttribute("totalIncome",i[0]);
+                System.out.println(i[0]);
             }
 
 //            ArrayList<String[]> rankOfBranch = jobTable.select();

@@ -42,7 +42,7 @@
 
 
 
-<div class="two-content-div glass single-content-div-form">
+<div class="two-content-div">
   <div class="colomn-content-div">
     <%
       try{
@@ -50,7 +50,7 @@
         for (String[] i : results1){
     %>
     <div>
-      <span class="title"><%=i[4]%></span>
+      <span class="subtitle"><%=i[4]%></span>
     </div>
     <%
         }
@@ -81,7 +81,13 @@
 </div>
 
 
-<footer class="footer"></footer>
+<footer class="footer">
+  <div class="center"><img src="../../Assets/SerWise.png" class="logo"></div>
+  <div class="center"><a href="#"> Contact Us </a> &nbsp|
+    &nbsp<a href="#"> About Us </a> &nbsp|
+    &nbsp <a href="#"> Legal Stuff </a></div>
+  <div class="center">All Rights Recieved</div>
+</footer>
 <script src="/SerWise_war/RegisteredClient/RegisteredClientHeader.js"></script>
 <script src="/SerWise_war/footer.js"></script>
 </body>

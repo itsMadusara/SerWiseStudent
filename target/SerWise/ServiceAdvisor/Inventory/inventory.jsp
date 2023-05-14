@@ -6,66 +6,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../CSS/content.css">
-    <link rel="stylesheet" href="../../CSS/navigation.css">
-    <link rel="stylesheet" href="../../CSS/footer.css">
-    <link rel="stylesheet" href="../../CSS/backgrount.css">
-    <link rel="stylesheet" href="../CSS/table.css">
-    <link rel="stylesheet" href="../CSS/popup.css">
-    <link rel="stylesheet" href="../CSS/content.css">
+    <link rel="stylesheet" href="/SerWise_war/CSS/content.css">
+    <link rel="stylesheet" href="/SerWise_war/CSS/navigation.css">
+    <link rel="stylesheet" href="/SerWise_war/CSS/footer.css">
+    <link rel="stylesheet" href="/SerWise_war/CSS/backgrount.css">
+    <link rel="stylesheet" href="/SerWise_war/ServiceAdvisor/CSS/table.css">
+    <link rel="stylesheet" href="/SerWise_war/ServiceAdvisor/CSS/popup.css">
     <title>Document</title>
 </head>
 <body>
 
-<%@ page import ="java.sql.*"%>
-<%@ page import="java.util.*" %>
-<%@ page import="java.sql.Date" %>
-<%@ page import="java.io.IOException"%>
-
 <%
-    class inventory{
-        Integer ID;
-        String name;
-        Integer quantity;
-        Integer H_time;
-        String Price;
+    if (session.getAttribute("auth")==null){
+        response.sendRedirect("/SerWise_war/Login/login.html");
     }
-    List<inventory> data = new ArrayList<inventory>();
-
-    try{
-        Connection con = DatabaseConnection.initializeDatabase();
-        PreparedStatement ps = con.prepareStatement("select * from serwise.inventory_item");
-        ResultSet rs = ps.executeQuery();
-
-        while(rs.next()){
-            inventory in = new inventory();
-            in.ID=rs.getInt("Inventory_Item_Id");
-            in.name=rs.getString("Name");
-            in.quantity=rs.getInt("Quantity");
-            in.H_time=rs.getInt("Handling_Time");
-            in.Price = String.format("%.02f", rs.getFloat("price"));
-            data.add(in);
+    else {
+        if (!session.getAttribute("auth").toString().equals("3")) {
+            out.println("invalid authentication");
+            out.println(session.getAttribute("auth"));
         }
     }
-    catch(SQLException sq){
-        response.sendRedirect("Errsql.html");
-    }
-    catch(ClassNotFoundException cq){
-        response.sendRedirect("Err.html");
-    }
-//  out.println("<table>");
-//  out.println("</table>");
 %>
+
 <div id="blur" class="back_g">
     <header class="navigation">
-        <img src="../../Assets/SerWise.png" class="navimg">
+        <img src="/SerWise_war/Assets/SerWise.png" class="navimg">
         <table>
             <tr>
-                <td><a href="../Home.jsp">Home</a></td>
-                <td><a href="inventory.jsp" style="color:#EE534F">Inventory</a></td>
-                <td><a href="../Job/job.jsp">Jobs</a></td>
-                <td><a href="../Slot/slot.jsp">Slots</a></td>
-                <td><a href="../../Login/login.html"><button class="button">Logout</button></a></td>
+                <td><a href="/SerWise_war/ServiceAdvisor/Home.jsp">Home</a></td>
+                <td><a href="/SerWise_war/BranchInventoryList?b_Id=<%out.println(session.getAttribute("branchId"));%>" style="color:#EE534F">Inventory</a></td>
+                <td><a href="/SerWise_war/BranchAppointmentList?b_Id=<%out.println(session.getAttribute("branchId"));%>">Appointment</a></td>
+                <td><a href="/SerWise_war/ServiceAdvisor/Job/job.jsp">Jobs</a></td>
+                <td><a href="/SerWise_war/GetSlotList?b_Id=<%out.println(session.getAttribute("branchId"));%>">Slots</a></td>
+                <td><a href="/SerWise_war/ServletLogout"><button class="button">Logout</button></a></td>
             </tr>
         </table>
     </header>
@@ -90,13 +63,36 @@
                 <tr>
                     <th>Item ID</th>
                     <th>Name</th>
-                    <th>Handling Time</th>
+                    <th>Measurement</th>
+                    <th>Batch No</th>
                     <th>Quantity</th>
                     <th>Price</th>
                 </tr>
                 <%
-                    for(Integer i = 0; i<data.size();i++){
-                        out.println("<tr><td>"+data.get(i).ID+"</td><td>"+data.get(i).name+"</td><td>"+data.get(i).H_time+"</td><td>"+data.get(i).quantity+"</td><td>"+data.get(i).Price+"</td>");
+                    int noOfRows = (int) request.getAttribute("noOfRows");
+                    int i = 0;
+                    while (i<noOfRows){
+                        out.println("<tr>");
+                        out.println("<td>");
+                        out.println(request.getAttribute("ItemID"+i).toString());
+                        out.println("</td>");
+                        out.println("<td>");
+                        out.println(request.getAttribute("ItemName"+i).toString());
+                        out.println("</td>");
+                        out.println("<td>");
+                        out.println(request.getAttribute("Measure"+i).toString());
+                        out.println("</td>");
+                        out.println("<td>");
+                        out.println(request.getAttribute("Batch_No"+i).toString());
+                        out.println("</td>");
+                        out.println("<td>");
+                        out.println(request.getAttribute("Qtt"+i).toString());
+                        out.println("</td>");
+                        out.println("<td>");
+                        out.println(request.getAttribute("Price"+i).toString());
+                        out.println("</td>");
+                        out.println("</tr>");
+                        i=i+1;
                     }
                 %>
             </table>
@@ -104,9 +100,12 @@
     </div>
 </div>
 
+<script src="/SerWise_war/ServiceAdvisor/JS/getfreeslot.js">
+    //fetching free slots...
+</script>
 
 <footer class="footer">
-    <div class="center"><img src="../../Assets/SerWise.png" class="logo"></div>
+    <div class="center"><img src="/SerWise_war/Assets/SerWise.png" class="logo"></div>
     <div class="center"><a href="#"> Contact Us </a> &nbsp|
         &nbsp<a href="#"> About Us </a> &nbsp|
         &nbsp <a href="#"> Legal Stuff </a></div>

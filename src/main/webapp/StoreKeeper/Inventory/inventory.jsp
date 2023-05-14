@@ -62,6 +62,7 @@
                     <th>Batch No</th>
                     <th>Quantity</th>
                     <th>Handling Time</th>
+                    <th colspan="3">Manage Inventory</th>
                 </tr>
 
                 <%
@@ -111,5 +112,6 @@
     <div class="center">All Rights Recieved</div>
 </footer>
 <script src="/SerWise_war/StoreKeeper/StoreKeeperHeader.js"></script>
+<script src="/SerWise_war/footer.js"></script>
 </body>
 </html>

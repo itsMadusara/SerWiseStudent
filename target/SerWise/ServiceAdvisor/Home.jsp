@@ -4,22 +4,26 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../CSS/content.css">
-  <link rel="stylesheet" href="../CSS/navigation.css">
-  <link rel="stylesheet" href="../CSS/footer.css">
-  <link rel="stylesheet" href="../CSS/backgrount.css">
+  <link rel="stylesheet" href="/SerWise_war/CSS/content.css">
+  <link rel="stylesheet" href="/SerWise_war/CSS/navigation.css">
+  <link rel="stylesheet" href="/SerWise_war/CSS/footer.css">
+  <link rel="stylesheet" href="/SerWise_war/CSS/backgrount.css">
+  <link rel="stylesheet" href="/SerWise_war/ServiceAdvisor/CSS/table.css">
+  <link rel="stylesheet" href="/SerWise_war/ServiceAdvisor/CSS/popup.css">
+  <link rel="stylesheet" href="/SerWise_war/ServiceAdvisor/CSS/content.css">
   <title>Document</title>
 </head>
 <body>
 <header class="navigation">
-  <img src="../Assets/SerWise.png" class="navimg">
+  <img src="/SerWise_war/Assets/SerWise.png" class="navimg">
   <table>
     <tr>
-      <td><a href="Home.jsp" style="color:#EE534F">Home</a></td>
-      <td><a href="Inventory/inventory.jsp">Inventory</a></td>
-      <td><a href="Job/job.jsp" >Jobs</a></td>
-      <td><a href="Slot/slot.jsp">Slots</a></td>
-      <td><a href="../Login/login.html"><button class="button">Logout</button></a></td>
+      <td><a href="/SerWise_war/ServiceAdvisor/Home.jsp" style="color:#EE534F">Home</a></td>
+      <td><a href="/SerWise_war/BranchInventoryList?b_Id=<%out.println(session.getAttribute("branchId"));%>" >Inventory</a></td>
+      <td><a href="/SerWise_war/BranchAppointmentList?b_Id=<%out.println(session.getAttribute("branchId"));%>" >Appointment</a></td>
+      <td><a href="/SerWise_war/ServiceAdvisor/Job/job.jsp">Jobs</a></td>
+      <td><a href="/SerWise_war/GetSlotList?b_Id=<%out.println(session.getAttribute("branchId"));%>">Slots</a></td>
+      <td><a href="/SerWise_war/ServletLogout"><button class="button">Logout</button></a></td>
     </tr>
   </table>
 </header>
@@ -62,7 +66,7 @@
 </div>
 
 <footer class="footer">
-  <div class="center"><img src="../Assets/SerWise.png" class="logo"></div>
+  <div class="center"><img src="/SerWise_war/Assets/SerWise.png" class="logo"></div>
   <div class="center"><a href="#"> Contact Us </a> &nbsp|
     &nbsp<a href="#"> About Us </a> &nbsp|
     &nbsp <a href="#"> Legal Stuff </a></div>

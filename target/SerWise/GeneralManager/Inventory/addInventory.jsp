@@ -39,7 +39,7 @@
                     <option value="Units">No of Units</option>
                     <option value="Kilograms">Kilograms</option>
                 </select><br>
-                <input type="number" name="price" pattern="[0-9]+" min="0" placeholder="Price Per Unit (Rs.)" required><br>
+                <input type="text" name="price" pattern="[0-9]+" placeholder="Price Per Unit (Rs.)" required><br>
                 <div id="branchDiv">
                     <input type="hidden" name="noOfBranches" id="noBranch" value="1">
 <%--                    <input type="text" id="branchid1" name="branchid1" placeholder="Available branch ID">--%>
@@ -55,11 +55,15 @@
     </div>
 
 
-    <footer class="footer"></footer>
-
+    <footer class="footer">
+        <div class="center"><img src="../../Assets/SerWise.png" class="logo"></div>
+        <div class="center"><a href="#"> Contact Us </a> &nbsp| 
+            &nbsp<a href="#"> About Us </a> &nbsp|
+            &nbsp <a href="#"> Legal Stuff </a></div>
+        <div class="center">All Rights Recieved</div>
+    </footer>
 <script src="/SerWise_war/GeneralManager/GeneralManagerHeader.js"></script>
 <script src="/SerWise_war/GeneralManager/Inventory/inventory.js"></script>
-<script src="/SerWise_war/footer.js"></script>
 
 </body>
 </html>

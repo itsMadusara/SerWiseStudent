@@ -87,7 +87,7 @@
     <div class="center">All Rights Recieved</div>
 </footer>
 <script src="/SerWise_war/SlotLeader/SlotLeaderHeader.js"></script>
-
+<script src="/SerWise_war/footer.js"></script>
 <script>
 
     document.getElementById('jobId').addEventListener('input', searchTable);

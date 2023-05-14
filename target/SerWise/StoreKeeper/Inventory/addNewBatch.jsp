@@ -44,9 +44,9 @@
             <label>Enter Batch No</label>
             <input type="number" name="batchNo" placeholder="Please Enter" required><br>
             <label>Enter Quantity</label>
-            <input type="number" name="quantity" placeholder="Please Enter" required><br>
+            <input type="number" name="quantity" placeholder="Please Enter" min="0" required><br>
             <label>Enter Handling Time</label>
-            <input type="number" name="hT" placeholder="Please Enter" required><br>
+            <input type="number" name="hT" placeholder="Please Enter" min="0" required><br>
             <input type="submit" value="Add New Batch" class="button">
         </form>
         <%
@@ -67,5 +67,6 @@
     <div class="center">All Rights Recieved</div>
 </footer>
 <script src="/SerWise_war/StoreKeeper/StoreKeeperHeader.js"></script>
+<script src="/SerWise_war/footer.js"></script>
 </body>
 </html>

@@ -34,25 +34,30 @@
   </table>
 </header>
 
-<div class="two-content-div glass">
-  <div>
+<div class="two-content-div">
+  <div class="two-content-div-one">
     <span class="title">SerWise</span><br>
-    <span class="subtitle">Verify Number</span>
+    <span>Forgot Password</span>
   </div>
   <div class="two-content-div-form">
+    <span class="subtitle">Verify</span>
     <%
       String Id=request.getParameter("id");
+      session.setAttribute("Email",Id);
       try{
         String email = "Address='%s'";
         email = String.format(email,Id);
         ArrayList<String[]> results1 = registeredClientTable.select("Contact",email);
+        if(results1.isEmpty()){
+          response.sendRedirect("Login/enterEmail.jsp?message=Unknown Email,Please Register!");
+        }
         for (String[] i : results1){
+          session.setAttribute("Contact",i[0]);
     %>
     <form action="OTP.jsp" method="post">
       <label>Contact Number:</label>
-      <input type="text" name="contact" placeholder="<%=i[0]%>" disabled> <br>
+      <input type="text" name="contact" placeholder="<%=i[0]%>" disabled><br>
       <input type="submit" value="It's Me!" class="button"> &MediumSpace;
-      <a href="../Home/home.jsp"><button type="button" class="button"> Not Me! </button></a>
     </form>
     <%
         }
@@ -60,6 +65,9 @@
         throw new RuntimeException(e);
       }
     %>
+    <form action="../Home/home.jsp">
+      <input type="submit" value="Not Me!" class="button">
+    </form>
   </div>
 </div>
 

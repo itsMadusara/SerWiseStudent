@@ -26,7 +26,7 @@ public class listInventoryList extends HttpServlet {
         try {
 
             //get inventory list related to branch
-            ArrayList<String[]> result1= inventoryItemBranchTable.select("*","Branch_ID="+branch_Id);
+            ArrayList<String[]> result1= inventoryItemBranchTable.select("*","branch_Branch_ID="+branch_Id);
             int noofrows = 0;
             //get each inventory item details one by one
             for (String[] i : result1){

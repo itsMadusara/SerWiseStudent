@@ -122,7 +122,14 @@
     <servlet-name>ServletAddNewBatch</servlet-name>
     <url-pattern>/ServletAddNewBatch </url-pattern>
   </servlet-mapping>
-
+  <servlet>
+    <servlet-name>ServletGenerateOTPClient</servlet-name>
+    <servlet-class>com.CS01.SerWise.Services.Profile.ServletGenerateOTPClient</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletGenerateOTPClient</servlet-name>
+    <url-pattern>/ServletGenerateOTPClient</url-pattern>
+  </servlet-mapping>
 
   <!--  Created by Tharushka Madusara-->
   <!--  Branch Component Start-->
@@ -342,15 +349,6 @@
     <servlet-name>generateOtp</servlet-name>
     <url-pattern>/generateOtp</url-pattern>
   </servlet-mapping>
-  
-  <servlet>
-    <servlet-name>changePassword</servlet-name>
-    <servlet-class>com.CS01.SerWise.Services.Profile.changePassword</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>changePassword</servlet-name>
-    <url-pattern>/changePassword</url-pattern>
-  </servlet-mapping>
 
   <!--  Profile Component End-->
   <!--  Registration Component Start-->
@@ -419,15 +417,6 @@
   <servlet-mapping>
     <servlet-name>branchReport</servlet-name>
     <url-pattern>/branchReport</url-pattern>
-  </servlet-mapping>
-  
-  <servlet>
-    <servlet-name>overallReport</servlet-name>
-    <servlet-class>com.CS01.SerWise.Services.Report.viewOverallReport</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>overallReport</servlet-name>
-    <url-pattern>/overallReport</url-pattern>
   </servlet-mapping>
 
   <!--  Report Component End-->
@@ -506,6 +495,136 @@
   <servlet-mapping>
     <servlet-name>viewBranchReport</servlet-name>
     <url-pattern>/viewBranchReport</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>addJob</servlet-name>
+    <servlet-class>com.CS01.SerWise.Services.Job.addJob</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addJob</servlet-name>
+    <url-pattern>/addJob</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>GetSlotList</servlet-name>
+    <servlet-class>com.CS01.SerWise.Services.Slot.GetSlotList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetSlotList</servlet-name>
+    <url-pattern>/GetSlotList</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>GetSlotLeader</servlet-name>
+    <servlet-class>com.CS01.SerWise.Services.Slot.GetSlotLeader</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetSlotLeader</servlet-name>
+    <url-pattern>/GetSlotLeader</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>GetSlotMember</servlet-name>
+    <servlet-class>com.CS01.SerWise.Services.Slot.GetSlotMember</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetSlotMember</servlet-name>
+    <url-pattern>/GetSlotMember</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>EditSlot</servlet-name>
+    <servlet-class>com.CS01.SerWise.Services.Slot.EditSlot</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditSlot</servlet-name>
+    <url-pattern>/EditSlot</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>DltAppointment</servlet-name>
+    <servlet-class>com.CS01.SerWise.Services.Appointments.DltAppointment</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DltAppointment</servlet-name>
+    <url-pattern>/DltAppointment</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>getServiceListSA</servlet-name>
+    <servlet-class>com.CS01.SerWise.Services.Services.ServicesTable.ServletgetServiceListSA</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getServiceListSA</servlet-name>
+    <url-pattern>/getServiceListSA</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>CreateJob</servlet-name>
+    <servlet-class>com.CS01.SerWise.Services.Job.CreateJob</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateJob</servlet-name>
+    <url-pattern>/CreateJob</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>getItemList</servlet-name>
+    <servlet-class>com.CS01.SerWise.Services.Inventory.getItemList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getItemList</servlet-name>
+    <url-pattern>/getItemList</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ServletCreateJob</servlet-name>
+    <servlet-class>com.CS01.SerWise.Services.Job.ServletCreateJob</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletCreateJob</servlet-name>
+    <url-pattern>/ServletCreateJob</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>BranchInventoryList</servlet-name>
+    <servlet-class>com.CS01.SerWise.Services.Inventory.GetSingleBranchInventoryList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BranchInventoryList</servlet-name>
+    <url-pattern>/BranchInventoryList</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>BranchAppointmentList</servlet-name>
+    <servlet-class>com.CS01.SerWise.Services.Appointments.GetSingleBranchAppointmentList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BranchAppointmentList</servlet-name>
+    <url-pattern>/BranchAppointmentList</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>getfreeslot</servlet-name>
+    <servlet-class>com.CS01.SerWise.Services.Slot.ServletGetFreeSlot</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getfreeslot</servlet-name>
+    <url-pattern>/getfreeslot</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ServletCheckOut</servlet-name>
+    <servlet-class>com.CS01.SerWise.Services.Process.ServletCheckOut</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletCheckOut</servlet-name>
+    <url-pattern>/ServletCheckOut</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ServletDltAppointment</servlet-name>
+    <servlet-class>com.CS01.SerWise.Services.Process.ServletDltAppointment</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletDltAppointment</servlet-name>
+    <url-pattern>/ServletDltAppointment</url-pattern>
   </servlet-mapping>
 
 </web-app>

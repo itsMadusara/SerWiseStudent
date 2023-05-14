@@ -18,7 +18,7 @@
       <td><a href="Home.jsp" style="color:#EE534F">Home</a></td>
       <td><a href="Appointments/Appointments.jsp">Appointments</a></td>
       <td><a href="Gatepasses/Gatepass.jsp" >Gatepass</a></td>
-      <td><a href="../Login/login.html"><button class="button">Logout</button></a></td>
+      <td><a href="/SerWise_war/ServletLogout"><button class="button">Logout</button></a></td>
     </tr>
   </table>
 </header>

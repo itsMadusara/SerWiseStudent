@@ -38,13 +38,3 @@ label {
 .frm-input{
     margin-bottom: 10px;
 }
-
-.aligntop{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}

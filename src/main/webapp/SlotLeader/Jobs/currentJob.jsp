@@ -108,5 +108,6 @@ String slotId= (String) request.getAttribute("slot"+0);
     <div class="center">All Rights Recieved</div>
 </footer>
 <script src="/SerWise_war/SlotLeader/SlotLeaderHeader.js"></script>
+<script src="/SerWise_war/footer.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.CS01.SerWise.Services.Appointments;
+package com.CS01.SerWise.Services.Appoinment;
 
 import com.CS01.SerWise.Controllers.appoinmentTable;
 import jakarta.servlet.RequestDispatcher;

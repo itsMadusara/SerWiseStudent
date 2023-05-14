@@ -31,33 +31,38 @@
     </table>
 </header>
 
-<div class="two-content-div glass">
+<div class="two-content-div">
     <div class="two-content-div-one">
         <span class="title">SerWise</span><br>
-        <span class="subtitle">User Login</span>
+        <span>User Login</span>
     </div>
     <div class="two-content-div-form">
+        <span class="subtitle">Login</span>
         <form action="../ServletLogin" method="post">
             <input type="text" name="id" placeholder="Email" required><br>
             <input type="password" name="pswd" id="password" placeholder="Password" required><br>
             <div style="color:red" id="err"></div>
             <%
-                String msg = request.getParameter("message");
-                if(msg!=null){
-                    out.println("<span style=\"color: #EE534F\">"+msg+"</span><br>");
+                String msg=request.getParameter("message");
+                if(msg==null){
+                    msg="";
                 }
             %>
-            <input type="submit" value="Login" class="button"> &MediumSpace;
-            <a href="enterEmail.jsp"> <button type="button" class="button">Forget Password</button> </a>
+            <br><h4 style="color: #EE534F"><%=msg%></h4>
+            <input type="submit" value="Login" class="button">
         </form>
-<%--        <form action="enterEmail.jsp">--%>
-<%--            <input type="submit" value="Forget Password" class="button">--%>
-<%--        </form>--%>
+        <form action="enterEmail.jsp">
+            <input type="submit" value="Forget Password" class="button">
+        </form>
     </div>
 </div>
 
-<footer class="footer"></footer>
-
-<script src="/SerWise_war/footer.js"></script>
+<footer class="footer">
+    <div class="center"><img src="../Assets/SerWise.png" class="logo"></div>
+    <div class="center"><a href="#"> Contact Us </a> &nbsp|
+        &nbsp<a href="#"> About Us </a> &nbsp|
+        &nbsp <a href="#"> Legal Stuff </a></div>
+    <div class="center">All Rights Recieved</div>
+</footer>
 </body>
 </html>

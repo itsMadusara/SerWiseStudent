@@ -22,7 +22,7 @@ public class profileDetails extends HttpServlet {
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/Profile/profile.jsp");
 
         try {
-            if(session.getAttribute("employeeId") == null){
+            if (session.getAttribute("employeeId") == null){
                 String clientId = session.getAttribute("uid").toString();
                 afterWhere = "Registered_Client_Id=%s";
                 afterWhere = String.format(afterWhere, clientId);
@@ -37,7 +37,7 @@ public class profileDetails extends HttpServlet {
                 req.setAttribute("email",i[3]);
                 requestDispatcher.forward(req,resp);
 
-            } else if (session.getAttribute("uid") == null){
+            } else {
                 String employeeId = (String) session.getAttribute("employeeId");
                 afterWhere = "Employee_Id=%s";
                 afterWhere = String.format(afterWhere, employeeId);
@@ -51,15 +51,12 @@ public class profileDetails extends HttpServlet {
                 req.setAttribute("email",i[3]);
                 requestDispatcher.forward(req,resp);
 
-            } else {
-                resp.sendRedirect("http://localhost:8081/SerWise_war/Login/login.jsp");
             }
 
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
-            resp.sendRedirect("http://localhost:8081/SerWise_war/Error/error.jsp");
             throw new RuntimeException(e);
         }
     }

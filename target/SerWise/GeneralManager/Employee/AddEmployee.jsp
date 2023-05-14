@@ -62,7 +62,7 @@
                     <option value="10">Mechanic</option>
                 </select><br>
 <%--                <input id="empId" type="text" name="employeeID" pattern="[0-9]+" placeholder="Employee ID" required><br>--%>
-                <input type="email" id="emailInput" name="email" placeholder="Email" required><br>
+                <input type="email" name="email" placeholder="Email" required><br>
                 <input type="password" name="password" placeholder="Password" required><br>
                 <button id="addEmployeeBtn" type="submit" class="button">Add Employee</button><br>
             </form>
@@ -70,11 +70,14 @@
     </div>
 
 
-    <footer class="footer"> </footer>
-
+    <footer class="footer">
+        <div class="center"><img src="../../Assets/SerWise.png" class="logo"></div>
+        <div class="center"><a href="#"> Contact Us </a> &nbsp| 
+            &nbsp<a href="#"> About Us </a> &nbsp|
+            &nbsp <a href="#"> Legal Stuff </a></div>
+        <div class="center">All Rights Recieved</div>
+    </footer>
 <script src="/SerWise_war/GeneralManager/GeneralManagerHeader.js"></script>
 <script src="/SerWise_war/GeneralManager/Employee/addEmployee.js"></script>
-<script src="/SerWise_war/footer.js"></script>
-
 </body>
 </html>

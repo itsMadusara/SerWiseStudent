@@ -44,7 +44,7 @@
 
 
 
-<div class="two-content-div glass single-content-div-form">
+<div class="two-content-div">
     <div class="colomn-content-div">
         <%
             try{
@@ -56,7 +56,7 @@
         %>
         <div>
             <span class="title"><%=j[0]%></span><br>
-            <span class="subtitle">Appointment No: A<%=i[0]%></span>
+            <span class="subtitle">Appointment No:<%=i[0]%></span>
         </div>
         <%
                         }
@@ -76,7 +76,7 @@
                 for (String[] i : results1){
         %>
         <div>
-            <form method="post" action="#">
+            <form method="post" action="ViewPreviousAppointment.jsp">
                 <input type="submit" value="View Details" class="button"/>
                 <input type = "hidden" name="Vehicle_Id" value="<%=i[0]%>" class="button" />
             </form>
@@ -91,8 +91,13 @@
 </div>
 
 
-<footer class="footer"></footer>
-
+<footer class="footer">
+    <div class="center"><img src="../../Assets/SerWise.png" class="logo"></div>
+    <div class="center"><a href="#"> Contact Us </a> &nbsp|
+        &nbsp<a href="#"> About Us </a> &nbsp|
+        &nbsp <a href="#"> Legal Stuff </a></div>
+    <div class="center">All Rights Recieved</div>
+</footer>
 <script src="/SerWise_war/RegisteredClient/RegisteredClientHeader.js"></script>
 <script src="/SerWise_war/footer.js"></script>
 </body>

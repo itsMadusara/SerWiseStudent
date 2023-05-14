@@ -31,12 +31,13 @@
   </table>
 </header>
 
-<div class="two-content-div glass">
+<div class="two-content-div">
   <div class="two-content-div-one">
     <span class="title">SerWise</span><br>
-    <span class="subtitle">Forgot Password</span>
+    <span>Forgot Password</span>
   </div>
   <div class="two-content-div-form">
+    <span class="subtitle">Email</span>
     <form action="forgetPassword.jsp" method="post">
       <label>Email:</label>
       <input type="text" name="id" placeholder="Enter Email" required><br>
@@ -45,8 +46,12 @@
   </div>
 </div>
 
-<footer class="footer"></footer>
-
-<script src="/SerWise_war/footer.js"></script>
+<footer class="footer">
+  <div class="center"><img src="../Assets/SerWise.png" class="logo"></div>
+  <div class="center"><a href="#"> Contact Us </a> &nbsp|
+    &nbsp<a href="#"> About Us </a> &nbsp|
+    &nbsp <a href="#"> Legal Stuff </a></div>
+  <div class="center">All Rights Recieved</div>
+</footer>
 </body>
 </html>

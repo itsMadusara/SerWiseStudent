@@ -64,7 +64,7 @@
           <td><a href="../Inventory/inventory.jsp">Inventory</a></td>
           <td><a href="job.jsp" style="color:#EE534F">Jobs</a></td>
           <td><a href="../Slot/slot.jsp">Slots</a></td>
-          <td><a href="../../Login/login.html"><button class="button">Logout</button></a></td>
+          <td><a href="/SerWise_war/ServletLogout"><button class="button">Logout</button></a></td>
         </tr>
       </table>
     </header>

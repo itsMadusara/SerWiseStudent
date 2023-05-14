@@ -1,5 +1,3 @@
-<%@ page import="java.time.format.DateTimeFormatter" %>
-<%@ page import="java.time.LocalDateTime" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,19 +33,15 @@
     <div class="two-content-div-form">
         <form method="post" action="/SerWise_war/updateEmployeeDetails">
             <input type="text" name="employeeID" placeholder="Employee ID" value="<%out.print(request.getAttribute("EmployeeID"));%>" readonly><br>
-            <input type="text" name="firstName" placeholder="First Name" pattern="[A-Za-z]+" value="<%out.print(request.getAttribute("FirstName"));%>"><br>
-            <input type="text" name="lastName" placeholder="Last Name" pattern="[A-Za-z]+" value="<%out.print(request.getAttribute("LastName"));%>"><br>
-            <input type="text" name="contact" placeholder="Contact Number" pattern="(07)[0-9]{8}" value="<%out.print(request.getAttribute("Contact"));%>"><br>
+            <input type="text" name="firstName" placeholder="First Name" value="<%out.print(request.getAttribute("FirstName"));%>"><br>
+            <input type="text" name="lastName" placeholder="Last Name" value="<%out.print(request.getAttribute("LastName"));%>"><br>
+            <input type="text" name="contact" placeholder="Contact Number" value="<%out.print(request.getAttribute("Contact"));%>"><br>
             <input type="text" name="address" placeholder="Address (Home)" value="<%out.print(request.getAttribute("Address"));%>"><br>
             <input type="hidden" id="BranchIdNow" placeholder="Branch ID" value="<%out.print(request.getAttribute("BranchID"));%>">
             <select id="BranchId" name="BranchID">
 
             </select>
-            <%
-                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-                LocalDateTime now = LocalDateTime.now();
-            %>
-            <input type="date" name="date" max="<%=dtf.format(now)%>" value="<%out.print(request.getAttribute("JoinedDate"));%>"><br>
+            <input type="date" name="date" value="<%out.print(request.getAttribute("JoinedDate"));%>"><br>
             <%String role = request.getAttribute("Role").toString();%>
             <select id="role" name="role" class="drop-down-list" required>
                 <option value="2" <%if (role.equals("2")) {out.print("selected");}%>>General Manager</option>
@@ -66,10 +60,14 @@
 </div>
 
 
-<footer class="footer"></footer>
-
+<footer class="footer">
+    <div class="center"><img src="../../Assets/SerWise.png" class="logo"></div>
+    <div class="center"><a href="#"> Contact Us </a> &nbsp|
+        &nbsp<a href="#"> About Us </a> &nbsp|
+        &nbsp <a href="#"> Legal Stuff </a></div>
+    <div class="center">All Rights Recieved</div>
+</footer>
 <script src="/SerWise_war/GeneralManager/GeneralManagerHeader.js"></script>
 <script src="/SerWise_war/GeneralManager/Employee/updateEmployee.js"></script>
-<script src="/SerWise_war/footer.js"></script>
 </body>
 </html>

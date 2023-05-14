@@ -33,31 +33,38 @@
 </header>
 
 
-<div class="two-content-div glass">
+<div class="two-content-div">
     <div class="two-content-div-one">
         <span class="title">SerWise</span><br>
-        <span class="subtitle">OTP Verification</span>
+        <span>OTP Verification</span>
     </div>
     <div class="two-content-div-form">
+        <span class="subtitle">OTP</span>
         <form id="reform" action="../../ServletOTP" method="post">
-            <input type="number" id="OTPval" name="OTP" placeholder="ENTER OTP" required> <br>
+            <input type="text" id="OTPval" name="OTP" placeholder="ENTER OTP" required> <br>
             <div style="color:red" id="err"></div>
             <%
-                String msg = request.getParameter("message");
-                if(msg!=null){
-                    out.println("<span style=\"color: #EE534F\">"+msg+"</span><br>");
+                String msg=request.getParameter("message");
+                if(msg==null){
+                    msg="";
                 }
             %>
-            <button type="button" class="button" id="OPTDivbtn">Get OTP</button> &MediumSpace;
+            <br><h4 style="color: #EE534F"><%=msg%></h4>
+            <button type="button" class="button" id="OPTDivbtn">Get OTP</button>
             <button type="submit" id="submitButton" class="button">Register</button>
         </form>
     </div>
 </div>
 
 
-<footer class="footer"></footer>
+<footer class="footer">
+    <div class="center"><img src="../../Assets/SerWise.png" class="logo"></div>
+    <div class="center"><a href="#"> Contact Us </a> &nbsp|
+        &nbsp<a href="#"> About Us </a> &nbsp|
+        &nbsp <a href="#"> Legal Stuff </a></div>
+    <div class="center">All Rights Recieved</div>
+</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.min.js"></script>
-<script src="OTP.jsp"></script>
-<script src="/SerWise_war/footer.js"></script>
+<script src="/SerWise_war/UnregisteredClient/Register/OTP.js"></script>
 </body>
 </html>

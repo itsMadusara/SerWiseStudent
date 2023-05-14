@@ -47,7 +47,7 @@
             <label>Quantity</label>
             <input type="number" name="quantity" placeholder="<%=i[2]%>" disabled><br>
             <label>Enter Handling Time</label>
-            <input type="number" name="hT" placeholder="<%=i[3]%>" required><br>
+            <input type="number" name="hT" placeholder="<%=i[3]%>" min="0" required><br>
             <input type="submit" value="Update Handling Time" class="button">
         </form>
         <%
@@ -68,5 +68,6 @@
     <div class="center">All Rights Recieved</div>
 </footer>
 <script src="/SerWise_war/StoreKeeper/StoreKeeperHeader.js"></script>
+<script src="/SerWise_war/footer.js"></script>
 </body>
 </html>

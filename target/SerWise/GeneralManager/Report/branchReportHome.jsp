@@ -23,24 +23,29 @@
         </div>
         <div class="two-content-div-form">
             <form method="post" action="/SerWise_war/branchReport">
-                <select id="branchId" name="branchId" required>
+                <select id="branchId" name="branchId">
 
                 </select>
                 <%
                     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM");
                     LocalDateTime now = LocalDateTime.now();
                 %>
-                <input type="month" name="month" max="<%=dtf.format(now)%>" placeholder="Select Month" required><br>
+                <input type="month" name="month" max="<%=dtf.format(now)%>" placeholder="Select Month"><br>
                 <input type="submit" class="button" value="View Report">
             </form>
         </div>
     </div>
 
 
-    <footer class="footer"></footer>
+    <footer class="footer">
+        <div class="center"><img src="../../Assets/SerWise.png" class="logo"></div>
+        <div class="center"><a href="#"> Contact Us </a> &nbsp| 
+            &nbsp<a href="#"> About Us </a> &nbsp|
+            &nbsp <a href="#"> Legal Stuff </a></div>
+        <div class="center">All Rights Recieved</div>
+    </footer>
 
     <script src="/SerWise_war/GeneralManager/GeneralManagerHeader.js"></script>
     <script src="/SerWise_war/GeneralManager/Report/branchReportHome.js"></script>
-    <script src="/SerWise_war/footer.js"></script>
 </body>
 </html>

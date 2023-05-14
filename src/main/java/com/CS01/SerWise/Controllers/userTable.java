@@ -21,7 +21,7 @@ public class userTable {
 
     public static void delete(String primaryKey) throws SQLException, ClassNotFoundException {
         Connection con = DatabaseConnection.initializeDatabase();
-        String query = "delete from serwise.user where id='%s';";
+        String query = "delete from serwise.user where id='%s;'";
         query = String.format(query, primaryKey);
         Statement statement = con.createStatement();
         statement.executeUpdate(query);
