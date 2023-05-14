@@ -349,6 +349,15 @@
     <servlet-name>generateOtp</servlet-name>
     <url-pattern>/generateOtp</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>changePassword</servlet-name>
+    <servlet-class>com.CS01.SerWise.Services.Profile.changePassword</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>changePassword</servlet-name>
+    <url-pattern>/changePassword</url-pattern>
+  </servlet-mapping>
 
   <!--  Profile Component End-->
   <!--  Registration Component Start-->
@@ -417,6 +426,15 @@
   <servlet-mapping>
     <servlet-name>branchReport</servlet-name>
     <url-pattern>/branchReport</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>overallReport</servlet-name>
+    <servlet-class>com.CS01.SerWise.Services.Report.viewOverallReport</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>overallReport</servlet-name>
+    <url-pattern>/overallReport</url-pattern>
   </servlet-mapping>
 
   <!--  Report Component End-->

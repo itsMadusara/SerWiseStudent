@@ -33,13 +33,12 @@
 </header>
 
 
-<div class="two-content-div">
+<div class="two-content-div glass">
     <div class="two-content-div-one">
         <span class="title">SerWise</span><br>
-        <span>Register</span>
+        <span class="subtitle">Register</span>
     </div>
     <div class="two-content-div-form">
-        <span class="subtitle">Register</span>
         <form id="reform" action="../../ServletRegister" method="post">
             <input type="text" id="Fname" name="Fname" placeholder="First Name" required> <br>
             <input type="text" id="Lname" name="Lname" placeholder="Last Name" required><br>
@@ -49,25 +48,19 @@
             <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required><br>
             <div style="color:red" id="err"></div>
             <%
-                String msg=request.getParameter("message");
-                if(msg==null){
-                    msg="";
+                String msg = request.getParameter("message");
+                if(msg!=null){
+                    out.println("<span style=\"color: #EE534F\">"+msg+"</span><br>");
                 }
             %>
-            <br><h4 style="color: #EE534F"><%=msg%></h4>
             <button type="submit" id="submitButton" class="button" >Register</button>
         </form>
     </div>
 </div>
 
 
-<footer class="footer">
-    <div class="center"><img src="../../Assets/SerWise.png" class="logo"></div>
-    <div class="center"><a href="#"> Contact Us </a> &nbsp|
-        &nbsp<a href="#"> About Us </a> &nbsp|
-        &nbsp <a href="#"> Legal Stuff </a></div>
-    <div class="center">All Rights Recieved</div>
-</footer>
+<footer class="footer"></footer>
 <script src="register.js"></script>
+<script src="/SerWise_war/footer.js"></script>
 </body>
 </html>
