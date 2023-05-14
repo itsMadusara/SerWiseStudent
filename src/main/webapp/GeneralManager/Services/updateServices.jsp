@@ -33,9 +33,9 @@
   </div>
   <div class="two-content-div-form">
     <form method="post" action="/SerWise_war/updateServiceDetails">
-      <input type="text" name="serviceName" pattern="[A-Za-z0-9' ']+" placeholder="Service Name" value="<% out.println(request.getAttribute("serviceName")); %>"><br>
+      <input type="text" name="serviceName" pattern="[A-Za-z' ']+" placeholder="Service Name" value="<% out.println(request.getAttribute("serviceName")); %>"><br>
       <input type="hidden" id="serviceId" name="serviceID" placeholder="Service ID" value="<% out.println(request.getAttribute("serviceID")); %>">
-      <input type="text" name="price" pattern="[0-9]+(.[0-9]{2})" placeholder="Service Price in Rs." value="<% out.println(request.getAttribute("price")); %>"><br>
+      <input type="text" name="price" pattern="[0-9]+" placeholder="Service Price in Rs." value="<% out.println(request.getAttribute("price")); %>"><br>
       <input type="text" name="timeSpend" pattern="[0-9]+" placeholder="Time Spend In Mins" value="<% out.println(request.getAttribute("time")); %>"><br>
 
       <div id="branchDivPopup" class="change-password-popup">
@@ -86,15 +86,11 @@
 </div>
 
 
-<footer class="footer">
-  <div class="center"><img src="../../Assets/SerWise.png" class="logo"></div>
-  <div class="center"><a href="#"> Contact Us </a> &nbsp|
-    &nbsp<a href="#"> About Us </a> &nbsp|
-    &nbsp <a href="#"> Legal Stuff </a></div>
-  <div class="center">All Rights Recieved</div>
-</footer>
+<footer class="footer"></footer>
+
 <script src="/SerWise_war/GeneralManager/GeneralManagerHeader.js"></script>
 <script src="/SerWise_war/GeneralManager/Services/updateServices.js"></script>
+<script src="/SerWise_war/footer.js"></script>
 
 </body>
 </html>
