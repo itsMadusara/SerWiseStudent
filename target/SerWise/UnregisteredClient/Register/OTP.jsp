@@ -57,7 +57,7 @@
 
 <footer class="footer"></footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.min.js"></script>
-<script src="OTP.jsp"></script>
+<script src="OTP.js"></script>
 <script src="/SerWise_war/footer.js"></script>
 </body>
 </html>

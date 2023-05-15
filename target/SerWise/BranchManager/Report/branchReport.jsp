@@ -16,8 +16,8 @@
 
     <div class="single-content-div title">
         <div>
-            <span class="title">SerWise Branch - B001</span><br>
-            <span class="subtitle">December 2022</span>
+            <span class="title">SerWise Branch - <%=session.getAttribute("branchId")%></span><br>
+            <span class="subtitle"><%=request.getAttribute("month")%></span>
         </div>
     </div>
 
@@ -39,22 +39,16 @@
                     <span class="title"><%=request.getAttribute("totalIncome")%></span>
                 </td>
                 <td>
-                    <span class="subtitle">Rank by Profit</span><br>
-                    <span class="title">5<sup>th</sup></span>
+
                 </td>
             </tr>
         </table>
     </div>
 
 
-    <footer class="footer">
-        <div class="center"><img src="../../Assets/SerWise.png" class="logo"></div>
-        <div class="center"><a href="#"> Contact Us </a> &nbsp| 
-            &nbsp<a href="#"> About Us </a> &nbsp|
-            &nbsp <a href="#"> Legal Stuff </a></div>
-        <div class="center">All Rights Recieved</div>
-    </footer>
+    <footer class="footer"></footer>
 
     <script src="/SerWise_war/BranchManager/BranchManagerHeader.js"></script>
+    <script src="/SerWise_war/footer.js"></script>
 </body>
 </html>

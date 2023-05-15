@@ -104,10 +104,10 @@ public class ComfirmJob extends HttpServlet {
         }catch (Exception e) {
 
             //if there is an error , redirect to the error page
-            request.setAttribute("exception",e);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("Error/error.jsp");
+//            request.setAttribute("exception",e);
+//            RequestDispatcher dispatcher = request.getRequestDispatcher("Error/error.jsp");
 
-            dispatcher.forward(request, response);
+//            dispatcher.forward(request, response);
         }
     }
 }

@@ -7,6 +7,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -15,7 +16,8 @@ import java.util.ArrayList;
 public class ViewBranchReport extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String branchId = req.getParameter("branchId");
+        HttpSession session = req.getSession();
+        String branchId = session.getAttribute("branchId").toString();
         String month = req.getParameter("month");
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/BranchManager/Report/branchReport.jsp");
@@ -33,7 +35,7 @@ public class ViewBranchReport extends HttpServlet {
                 System.out.println(i[0]);
             }
 
-            ArrayList<String[]> totalIncome = jobTable.select("sum(Total)","Status in ('Done','Ongoing') and Branch_Id='"+branchId+"' and Date like '"+month+"%'");
+            ArrayList<String[]> totalIncome = jobTable.select("sum(Total)","Status in ('Billed') and Branch_Id='"+branchId+"' and Date like '"+month+"%'");
             for (String[] i : totalIncome){
                 if(i[0] == null){
                     i[0] = "0";
@@ -45,6 +47,7 @@ public class ViewBranchReport extends HttpServlet {
             ArrayList<String[]> branchLocation = branchTable.select("Location","Branch_Id="+branchId);
             req.setAttribute("branchId",branchLocation.get(0)[0]);
             req.setAttribute("month",month);
+
 
 
 

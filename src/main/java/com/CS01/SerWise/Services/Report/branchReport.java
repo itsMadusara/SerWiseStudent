@@ -1,5 +1,6 @@
 package com.CS01.SerWise.Services.Report;
 
+import com.CS01.SerWise.Controllers.branchTable;
 import com.CS01.SerWise.Controllers.jobTable;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -38,6 +39,9 @@ public class branchReport extends HttpServlet {
                 req.setAttribute("totalIncome",i[0]);
             }
 
+            ArrayList<String[]> branchLocation = branchTable.select("Location", "Branch_Id=" + branchId);
+            req.setAttribute("branchId", branchLocation.get(0)[0]);
+            req.setAttribute("month",month);
 //            ArrayList<String[]> rankOfBranch = jobTable.select();
 
             requestDispatcher.forward(req,resp);

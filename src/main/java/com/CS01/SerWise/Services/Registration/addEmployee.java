@@ -68,7 +68,9 @@ public class addEmployee extends HttpServlet {
                     securityTable.insert("Employee_Id",employeeId);
                     break;
                 case 8:
-                    slotLeaderTable.insert("Employee_Id",employeeId);
+                    String slotLeaderVals = "%s,%s";
+                    slotLeaderVals = String.format(slotLeaderVals, employeeId,BranchID);
+                    slotLeaderTable.insert("Employee_Id,Branch_Id",slotLeaderVals);
                     break;
                 case 9:
                     washerTable.insert("Employee_Id",employeeId);
